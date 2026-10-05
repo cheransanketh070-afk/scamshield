@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>ScamShield: is this message a scam?</title>
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cpath d='M16 2 4 7v8c0 7.5 5 13 12 15 7-2 12-7.5 12-15V7z' fill='%2314213d'/%3E%3Cpath d='m10.5 16 4 4 7.5-8' fill='none' stroke='%23ffd84d' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+  <link rel="stylesheet" href="/app.css">
+</head>
+<body>
+  <header>
+    <h1>ScamShield</h1>
+    <p>Paste a message you're unsure about. You'll get a verdict, the red flags, and what to do next.</p>
+  </header>
+
+  <main>
+    <section class="input" aria-labelledby="msg-label">
+      <label id="msg-label" for="msg">Message to check</label>
+      <textarea id="msg" rows="9" spellcheck="false" maxlength="10000"
+        placeholder="Paste an SMS, WhatsApp message or email here"></textarea>
+      <div class="actions">
+        <button id="check" type="button">Check message</button>
+        <button id="clear" type="button" class="quiet">Clear</button>
+      </div>
+      <div class="examples">
+        <span>No message handy? Try one:</span>
+        <button type="button" class="chip" data-ex="bank">Bank alert</button>
+        <button type="button" class="chip" data-ex="parcel">Parcel fee</button>
+        <button type="button" class="chip" data-ex="job">Job offer</button>
+        <button type="button" class="chip" data-ex="mum">Family request</button>
+        <button type="button" class="chip" data-ex="otp">Real OTP text</button>
+      </div>
+      <p class="privacy">This runs on your computer. Your message isn't stored or sent anywhere else.</p>
+    </section>
+
+    <section class="result" id="result" aria-live="polite">
+      <div class="empty">
+        <p class="empty-title">Nothing checked yet</p>
+        <p>Paste a message on the left and select <b>Check message</b>. Flagged phrases will be highlighted here like a marker pen.</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    ScamShield is a helper, not a guarantee. If you've already shared codes or sent money, call your bank right away.
+  </footer>
+  <script src="/app.js"></script>
+</body>
+</html>

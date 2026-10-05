@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "scamshield"
+version = "0.1.0"
+description = "Private, offline scam-message checker: paste a message, get a verdict, the red flags and what to do next."
+readme = "README.md"
+requires-python = ">=3.9"
+license = { text = "MIT" }
+keywords = ["scam", "phishing", "fraud", "sms", "whatsapp", "security", "privacy"]
+classifiers = [
+  "Development Status :: 3 - Alpha",
+  "Intended Audience :: End Users/Desktop",
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Security",
+]
+dependencies = []          # standard library only
+
+[project.scripts]
+scamshield = "scamshield.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/YOUR_USERNAME/scamshield"
+Issues = "https://github.com/YOUR_USERNAME/scamshield/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.setuptools.package-data]
+scamshield = ["data/*.json", "web/*"]

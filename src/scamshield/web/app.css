@@ -1,0 +1,75 @@
+:root {
+  --ink: #14213d;
+  --muted: #4d5d75;
+  --bg: #e8edf2;
+  --paper: #ffffff;
+  --line: #c3cfdb;
+  --mark: #ffd84d;
+  --danger: #b3122b;
+  --warn: #8f5200;
+  --ok: #17695b;
+  --serif: "Iowan Old Style", "Palatino Linotype", Palatino, Georgia, serif;
+  --sans: "Segoe UI", system-ui, -apple-system, "Helvetica Neue", Arial, sans-serif;
+}
+* { box-sizing: border-box; }
+html { background: var(--bg); color: var(--ink); font: 16px/1.55 var(--sans); }
+body { margin: 0 auto; max-width: 1080px; padding: 2.5rem 1.25rem 3rem; }
+
+header { margin-bottom: 2rem; }
+h1 { font: 700 clamp(2.4rem, 6vw, 3.6rem)/1.05 var(--serif); letter-spacing: -0.02em; margin: 0 0 .5rem; }
+header p { margin: 0; max-width: 34rem; color: var(--muted); font-size: 1.1rem; }
+
+main { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: 2.5rem; align-items: start; }
+@media (max-width: 860px) { main { grid-template-columns: 1fr; gap: 2rem; } }
+
+label { display: block; font-weight: 600; margin-bottom: .4rem; }
+textarea {
+  width: 100%; resize: vertical; padding: .85rem 1rem; color: inherit;
+  font: 1rem/1.5 var(--sans); background: #fff; border: 1px solid var(--line); border-radius: 6px;
+}
+textarea:focus-visible, button:focus-visible { outline: 3px solid var(--ink); outline-offset: 2px; }
+
+.actions { display: flex; gap: .6rem; margin: .8rem 0 1.2rem; }
+button {
+  font: 600 1rem var(--sans); cursor: pointer; border-radius: 6px; padding: .65rem 1.2rem;
+  border: 2px solid var(--ink); background: var(--ink); color: #fff;
+}
+button:hover { background: #0c1630; }
+button.quiet { background: transparent; color: var(--ink); border-color: var(--line); }
+button.quiet:hover { border-color: var(--ink); background: transparent; }
+.examples { display: flex; flex-wrap: wrap; gap: .5rem; align-items: center; color: var(--muted); font-size: .95rem; }
+.chip { font-weight: 500; font-size: .9rem; padding: .25rem .75rem; border-radius: 999px;
+  background: transparent; color: var(--ink); border: 1px solid var(--line); }
+.chip:hover { background: #fff; border-color: var(--ink); }
+.privacy { margin: 1.4rem 0 0; font-size: .92rem; color: var(--muted); border-left: 3px solid var(--mark); padding-left: .75rem; }
+
+.result { background: var(--paper); border: 1px solid var(--line); border-radius: 4px;
+  padding: 1.6rem; min-height: 22rem; position: relative; box-shadow: 0 1px 0 var(--line), 0 12px 30px -18px rgba(20,33,61,.35); }
+.empty { color: var(--muted); }
+.empty-title { font: 600 1.35rem var(--serif); color: var(--ink); margin: 0 0 .4rem; }
+
+.stamp { position: absolute; top: 1.2rem; right: 1.2rem; transform: rotate(-4deg);
+  border: 3px solid currentColor; border-radius: 6px; padding: .3rem .8rem; text-align: center;
+  font: 700 1.25rem/1.1 var(--serif); background: #fff; animation: thud .35s cubic-bezier(.2,1.4,.4,1); }
+.stamp small { display: block; font: 600 .8rem var(--sans); letter-spacing: .02em; }
+@keyframes thud { from { transform: rotate(-9deg) scale(1.5); opacity: 0; } to { transform: rotate(-4deg) scale(1); opacity: 1; } }
+@media (prefers-reduced-motion: reduce) { .stamp { animation: none; } }
+.v-likely_scam { color: var(--danger); } .v-suspicious { color: var(--warn); } .v-low_risk { color: var(--ok); }
+
+.slip-title { font: 600 1.5rem/1.2 var(--serif); margin: 0 7.5rem .9rem 0; }
+.slip { white-space: pre-wrap; overflow-wrap: anywhere; background: #f6f8fb; border: 1px dashed var(--line);
+  border-radius: 4px; padding: 1rem; margin: 0 0 1.4rem; max-height: 16rem; overflow: auto; }
+mark { background: linear-gradient(transparent 12%, var(--mark) 12%, var(--mark) 92%, transparent 92%); color: inherit; padding: 0 .1em; }
+h2 { font: 700 1rem var(--sans); margin: 1.4rem 0 .5rem; }
+ul { margin: 0; padding: 0; list-style: none; }
+.flags li { padding: .65rem 0; border-top: 1px solid var(--line); }
+.flags li:first-child { border-top: 0; }
+.flags b { display: block; }
+.flags .why { color: var(--muted); font-size: .95rem; }
+.flags .found { font: .85rem ui-monospace, Menlo, Consolas, monospace; color: var(--muted); }
+.good b { color: var(--ok); }
+.todo li { padding: .25rem 0 .25rem 1.2rem; position: relative; }
+.todo li::before { content: ""; position: absolute; left: 0; top: .8em; width: .5rem; height: .5rem; border-radius: 50%; background: var(--ink); }
+.error { color: var(--danger); font-weight: 600; }
+
+footer { margin-top: 2.5rem; color: var(--muted); font-size: .92rem; max-width: 40rem; }

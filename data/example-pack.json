@@ -1,0 +1,16 @@
+{
+  "version": 1,
+  "categories": {},
+  "rules": [
+    {
+      "id": "community.en.example",
+      "category": "impersonation",
+      "lang": "en",
+      "weight": 15,
+      "title": "Example community rule",
+      "explain": "Shown to the user when the rule matches. Say why it is a red flag.",
+      "patterns": ["\\bexample scam phrase\\b"],
+      "examples": ["This contains an example scam phrase."]
+    }
+  ]
+}

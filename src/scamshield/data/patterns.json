@@ -1,0 +1,621 @@
+{
+ "version": 1,
+ "categories": {
+  "urgency": {
+   "label": "Pressure",
+   "tip": "Real organisations don't need an answer in minutes. Pause, then verify through an official channel."
+  },
+  "threat": {
+   "label": "Threat",
+   "tip": "Don't react to threats. Contact the company using the number on your card, bill or official website, not the one in the message."
+  },
+  "prize": {
+   "label": "Prize",
+   "tip": "You can't win a contest you never entered. Ignore it."
+  },
+  "credentials": {
+   "label": "Secret codes",
+   "tip": "Never share OTPs, PINs, CVVs or passwords. Banks and delivery firms never ask for them by message or call."
+  },
+  "payment": {
+   "label": "Payment",
+   "tip": "Never pay a 'fee' to receive a prize, parcel, loan or job. Don't send gift cards, crypto or wire transfers to people you haven't met."
+  },
+  "impersonation": {
+   "label": "Impersonation",
+   "tip": "Check the claim yourself: open the official app or type the website address manually."
+  },
+  "secrecy": {
+   "label": "Secrecy",
+   "tip": "Scammers try to isolate you. Talk to someone you trust before acting."
+  },
+  "contact_switch": {
+   "label": "Channel switch",
+   "tip": "Be careful when a stranger moves the chat to WhatsApp or Telegram."
+  },
+  "investment": {
+   "label": "Investment",
+   "tip": "Guaranteed returns don't exist. Check any firm with your country's financial regulator."
+  },
+  "job": {
+   "label": "Job offer",
+   "tip": "Genuine employers don't charge fees or promise big pay for simple tasks."
+  },
+  "family": {
+   "label": "Family request",
+   "tip": "Call the person on the number you already have before sending any money."
+  },
+  "tech_support": {
+   "label": "Tech support",
+   "tip": "Phones and browsers don't call you or show phone numbers for 'virus' alerts. Close the page."
+  },
+  "click": {
+   "label": "Link",
+   "tip": "Don't tap links in unexpected messages. Type the official address yourself."
+  },
+  "url": {
+   "label": "Link",
+   "tip": "Don't tap the link. Type the official address yourself."
+  },
+  "safe": {
+   "label": "Reassuring",
+   "tip": ""
+  }
+ },
+ "rules": [
+  {
+   "id": "urgency.en.deadline",
+   "category": "urgency",
+   "lang": "en",
+   "weight": 10,
+   "title": "Artificial deadline",
+   "explain": "Scammers rush you so you don't stop to think.",
+   "patterns": [
+    "\\b(urgent(ly)?|immediately|right away|act now|asap)\\b",
+    "\\bwithin\\s+(\\d+|one|two|a)\\s*(hours?|hrs?|minutes?|mins?|days?)\\b",
+    "\\b(final|last)\\s+(notice|warning|reminder|chance)\\b",
+    "\\bexpires?\\s+(today|tonight|soon|in)\\b"
+   ],
+   "examples": [
+    "URGENT: reply immediately",
+    "Final notice before closure"
+   ]
+  },
+  {
+   "id": "threat.en.account",
+   "category": "threat",
+   "lang": "en",
+   "weight": 20,
+   "title": "Threat to block or close an account",
+   "explain": "Fear of losing access is the most common pressure tactic.",
+   "patterns": [
+    "\\b(account|card|access|number|profile)\\b.{0,40}\\b(suspended|blocked|closed|locked|terminated|deactivated|disabled|restricted|frozen)\\b",
+    "\\b(suspended|blocked|locked|deactivated)\\b.{0,30}\\baccount\\b"
+   ],
+   "examples": [
+    "Your account will be suspended today"
+   ]
+  },
+  {
+   "id": "threat.en.legal",
+   "category": "threat",
+   "lang": "en",
+   "weight": 20,
+   "title": "Legal or police threat",
+   "explain": "Genuine authorities don't threaten arrest by text message.",
+   "patterns": [
+    "\\blegal action\\b",
+    "\\b(arrest|warrant|lawsuit|prosecut\\w+|police case)\\b",
+    "\\bunpaid (taxes?|fines?|dues)\\b"
+   ],
+   "examples": [
+    "A warrant has been issued for your arrest"
+   ]
+  },
+  {
+   "id": "prize.en.won",
+   "category": "prize",
+   "lang": "en",
+   "weight": 25,
+   "title": "Unexpected prize or winnings",
+   "explain": "You can't win a contest you never entered.",
+   "patterns": [
+    "\\byou('ve| have)?\\s+won\\b",
+    "\\byou\\s+(have\\s+)?been\\s+selected\\b",
+    "\\bcongratulations\\b.{0,60}\\b(won|winner|selected|prize|reward)\\b",
+    "\\b(lottery|sweepstakes?|jackpot)\\b",
+    "\\bclaim\\s+your\\s+(prize|reward|gift|winnings?|refund|cash)\\b",
+    "\\bfree (gift|iphone|ps5|voucher)\\b"
+   ],
+   "examples": [
+    "Congratulations! You have won $1,000",
+    "Claim your prize now"
+   ]
+  },
+  {
+   "id": "credentials.en.ask",
+   "category": "credentials",
+   "lang": "en",
+   "weight": 30,
+   "title": "Asks for secret codes or personal details",
+   "explain": "Banks, couriers and tax offices never ask for OTPs, PINs or passwords by message.",
+   "patterns": [
+    "(?<!not )(?<!never )(?<!n't )(?<!n\\u2019t )\\b(send|share|give|tell|provide|forward|reply with|enter|confirm)\\b.{0,30}\\b(otp|one[- ]time (password|code|pin)|cvv|pin( number)?|password|passcode|verification code|card number|security code)\\b",
+    "\\bverify your (account|identity|details|information|bank|card|payment)\\b",
+    "\\bconfirm your (account|identity|details|password|pin|card|information)\\b",
+    "\\bupdate your (kyc|bank details|payment (details|method)|billing (details|information)|account (details|information))\\b"
+   ],
+   "examples": [
+    "Please share your OTP to continue",
+    "Verify your account to avoid closure"
+   ]
+  },
+  {
+   "id": "payment.en.fee",
+   "category": "payment",
+   "lang": "en",
+   "weight": 25,
+   "title": "Asks for a small fee",
+   "explain": "Advance fees are how prize, parcel, loan and job scams make money.",
+   "patterns": [
+    "\\b(processing|redelivery|re-delivery|customs|clearance|release|handling|admin(istration)?|registration|activation) (fee|charge)s?\\b",
+    "\\badvance (fee|payment)\\b"
+   ],
+   "examples": [
+    "Pay a $1.99 redelivery fee",
+    "A small processing fee is required"
+   ]
+  },
+  {
+   "id": "payment.en.method",
+   "category": "payment",
+   "lang": "en",
+   "weight": 22,
+   "title": "Unusual payment method",
+   "explain": "Gift cards, crypto and wire transfers are hard to reverse, so scammers love them.",
+   "patterns": [
+    "\\bgift\\s?cards?\\b",
+    "\\b(bitcoin|btc|usdt|crypto(currency)?|ethereum)\\b",
+    "\\b(western union|moneygram|wire transfer)\\b"
+   ],
+   "examples": [
+    "Buy iTunes gift cards and send me the codes",
+    "Send USDT to this wallet"
+   ]
+  },
+  {
+   "id": "payment.en.ask",
+   "category": "payment",
+   "lang": "en",
+   "weight": 20,
+   "title": "Asks you to send money",
+   "explain": "A request for quick money from someone claiming to be a friend or relative is a classic scam.",
+   "patterns": [
+    "\\b(can|could|will) you (please )?(send|transfer|lend|wire)\\b.{0,30}\\b(money|cash|funds|\\$\\d+|\\u00a3\\d+|\\u20ac\\d+)\\b"
+   ],
+   "examples": [
+    "Can you please send me some money today"
+   ]
+  },
+  {
+   "id": "impersonation.en.parcel",
+   "category": "impersonation",
+   "lang": "en",
+   "weight": 15,
+   "title": "Fake delivery notice",
+   "explain": "Delivery-fee texts are one of the most common scams worldwide.",
+   "patterns": [
+    "\\b(parcel|package|shipment|delivery|order)\\b.{0,50}\\b(on hold|held|could not be delivered|couldn't be delivered|undelivered|failed|pending|returned|incomplete address|customs)\\b",
+    "\\b(delivery|redelivery)\\s+(attempt|failed|fee)\\b"
+   ],
+   "examples": [
+    "Your parcel is on hold, update your address"
+   ]
+  },
+  {
+   "id": "impersonation.en.official",
+   "category": "impersonation",
+   "lang": "en",
+   "weight": 15,
+   "title": "Generic 'official' wording",
+   "explain": "Real organisations use your name. Generic greetings and vague 'security team' claims are a warning sign.",
+   "patterns": [
+    "\\bdear\\s+(customer|user|client|member|account holder|valued\\s+\\w+)\\b",
+    "\\b(bank|security|fraud|compliance)\\s+(team|department|officer)\\b",
+    "\\b(tax refund|irs|hmrc|revenue department|inland revenue)\\b",
+    "\\b(unusual|suspicious|unauthori[sz]ed)\\s+(activity|login|sign-?in|transaction|access)\\b"
+   ],
+   "examples": [
+    "Dear customer, our security team noticed suspicious activity"
+   ]
+  },
+  {
+   "id": "family.en.newnumber",
+   "category": "family",
+   "lang": "en",
+   "weight": 30,
+   "title": "'New number' family message",
+   "explain": "Scammers pose as a child or parent on a new number and ask for urgent money.",
+   "patterns": [
+    "\\b(this is|it'?s) my new (phone )?number\\b",
+    "\\bhi\\s+(mum|mom|dad|mother|father)\\b.{0,80}\\b(new number|lost my phone|broke my phone|new phone)\\b"
+   ],
+   "examples": [
+    "Hi mum, this is my new number"
+   ]
+  },
+  {
+   "id": "secrecy.en.keep",
+   "category": "secrecy",
+   "lang": "en",
+   "weight": 15,
+   "title": "Asks you to keep it secret",
+   "explain": "Secrecy stops friends and family from spotting the scam.",
+   "patterns": [
+    "\\b(don'?t|do not|dont)\\s+(tell|speak|discuss)\\b.{0,30}\\b(anyone|anybody|family|friends|bank|police)\\b",
+    "\\bkeep (this|it) (a )?(secret|confidential|private)\\b"
+   ],
+   "examples": [
+    "Don't tell anyone about this",
+    "Please keep this a secret"
+   ]
+  },
+  {
+   "id": "contact.en.switch",
+   "category": "contact_switch",
+   "lang": "en",
+   "weight": 10,
+   "title": "Pushes you to WhatsApp or Telegram",
+   "explain": "Moving the chat to a private app helps scammers avoid detection.",
+   "patterns": [
+    "\\b(whatsapp|telegram|signal)\\b.{0,25}\\b(me|us|number|link|group|chat|contact)\\b",
+    "\\b(contact|message|text|dm|add)\\s+(us|me|him|her|our agent|the agent)\\b.{0,25}\\b(whatsapp|telegram)\\b"
+   ],
+   "examples": [
+    "Message us on WhatsApp to begin"
+   ]
+  },
+  {
+   "id": "job.en.pay",
+   "category": "job",
+   "lang": "en",
+   "weight": 25,
+   "title": "Big pay for easy work",
+   "explain": "High pay for simple tasks is the hallmark of job scams.",
+   "patterns": [
+    "\\b(earn|make)\\b.{0,15}[$\\u00a3\\u20ac]?\\d[\\d,]*.{0,25}\\b(per|a|every|each|/)\\s*(day|hour|week|daily)\\b",
+    "\\bdaily (income|salary|payout|pay)\\b"
+   ],
+   "examples": [
+    "Earn $300 per day",
+    "Daily income guaranteed"
+   ]
+  },
+  {
+   "id": "job.en.easy",
+   "category": "job",
+   "lang": "en",
+   "weight": 15,
+   "title": "Typical job-scam wording",
+   "explain": "Vague, no-experience offers that find you first are rarely real jobs.",
+   "patterns": [
+    "\\bwork\\s+from\\s+home\\b",
+    "\\bno\\s+(experience|qualifications?|skills?)\\s+(needed|required|necessary)\\b",
+    "\\bhiring\\s+(urgently|now|immediately)\\b"
+   ],
+   "examples": [
+    "Work from home opportunity",
+    "No experience required"
+   ]
+  },
+  {
+   "id": "investment.en.promise",
+   "category": "investment",
+   "lang": "en",
+   "weight": 25,
+   "title": "Guaranteed investment returns",
+   "explain": "No legitimate investment can guarantee profit.",
+   "patterns": [
+    "\\bguaranteed\\s+(returns?|profits?|income|payouts?)\\b",
+    "\\bdouble your (money|investment|bitcoin|crypto)\\b",
+    "\\brisk[- ]free\\b",
+    "\\b\\d{2,4}%\\s+(returns?|profit|roi)\\b.{0,20}\\b(daily|weekly|monthly|per (day|week|month))\\b"
+   ],
+   "examples": [
+    "Guaranteed returns of 5% daily"
+   ]
+  },
+  {
+   "id": "tech.en.virus",
+   "category": "tech_support",
+   "lang": "en",
+   "weight": 25,
+   "title": "Fake virus or hacking alert",
+   "explain": "Scareware tries to get you to call a fake support line or install remote-access software.",
+   "patterns": [
+    "\\b(your|the)\\s+(computer|pc|device|phone|mac|iphone)\\b.{0,30}\\b(is|has been|may be|was)\\b.{0,15}\\b(infected|hacked|compromised)\\b",
+    "\\bvirus\\s+(detected|found|alert)\\b",
+    "\\bcall\\b.{0,30}\\b(microsoft|apple|windows|google)\\s+(support|technical|helpline)\\b"
+   ],
+   "examples": [
+    "Your computer has been infected with a virus"
+   ]
+  },
+  {
+   "id": "click.en.link",
+   "category": "click",
+   "lang": "en",
+   "weight": 8,
+   "title": "Asks you to tap a link",
+   "explain": "Unexpected links are the main way phishing works.",
+   "patterns": [
+    "\\b(click|tap|open|visit|follow)\\b.{0,15}\\b(the |this |below |following )?(link|url)\\b",
+    "\\b(click|tap) here\\b"
+   ],
+   "examples": [
+    "Click here to continue",
+    "Tap the link below"
+   ]
+  },
+  {
+   "id": "safe.en.otp",
+   "category": "safe",
+   "lang": "en",
+   "weight": -10,
+   "title": "Standard anti-fraud wording",
+   "explain": "Genuine one-time-code messages usually include a warning like this. It doesn't prove the message is real, but it's a good sign.",
+   "patterns": [
+    "\\bdo\\s*n[o\\u2019']?t\\s+share\\b.{0,40}\\b(otp|code|pin|password)\\b",
+    "\\b(never|do not) share\\b.{0,40}\\b(otp|code|pin|password)\\b",
+    "\\b(your|the) (otp|one[- ]time (password|code)|verification code)( is|:)"
+   ],
+   "examples": [
+    "Your OTP is 482913. Do not share it with anyone."
+   ]
+  },
+  {
+   "id": "urgency.es",
+   "category": "urgency",
+   "lang": "es",
+   "weight": 10,
+   "title": "Plazo artificial",
+   "explain": "Los estafadores te apuran para que no pienses.",
+   "patterns": [
+    "\\b(urgente|inmediatamente|de inmediato|\\u00faltimo aviso|ultimo aviso|en 24 horas)\\b"
+   ],
+   "examples": [
+    "Responda de inmediato"
+   ]
+  },
+  {
+   "id": "threat.es",
+   "category": "threat",
+   "lang": "es",
+   "weight": 20,
+   "title": "Amenaza de bloqueo",
+   "explain": "El miedo a perder el acceso es la presión más común.",
+   "patterns": [
+    "\\b(cuenta|tarjeta)\\b.{0,40}\\b(bloquead[ao]|suspendid[ao]|cancelad[ao]|restringid[ao])\\b",
+    "\\bacci[\\u00f3o]n legal\\b"
+   ],
+   "examples": [
+    "Su cuenta será bloqueada hoy"
+   ]
+  },
+  {
+   "id": "prize.es",
+   "category": "prize",
+   "lang": "es",
+   "weight": 25,
+   "title": "Premio inesperado",
+   "explain": "No puedes ganar un sorteo en el que no participaste.",
+   "patterns": [
+    "\\b(has ganado|ha ganado|ganaste|felicidades)\\b.{0,60}\\b(premio|sorteo|iphone|dinero|loter[i\\u00ed]a)\\b",
+    "\\b(loter[i\\u00ed]a|sorteo)\\b.{0,40}\\b(ganador|ganaste|premio)\\b"
+   ],
+   "examples": [
+    "Felicidades, has ganado un premio"
+   ]
+  },
+  {
+   "id": "credentials.es",
+   "category": "credentials",
+   "lang": "es",
+   "weight": 30,
+   "title": "Pide claves o datos personales",
+   "explain": "Ningún banco pide códigos o contraseñas por mensaje.",
+   "patterns": [
+    "\\b(verifica|confirma|actualiza)\\s+(tu|su)\\s+(cuenta|identidad|datos|contrase\\u00f1a|tarjeta|clave)\\b",
+    "\\b(env[i\\u00ed]a|comparte|proporciona|dime)\\b.{0,30}\\b(c[\\u00f3o]digo|clave|contrase\\u00f1a|pin|cvv)\\b"
+   ],
+   "examples": [
+    "Verifica tu cuenta ahora"
+   ]
+  },
+  {
+   "id": "payment.es",
+   "category": "payment",
+   "lang": "es",
+   "weight": 25,
+   "title": "Pago inusual o tarifa",
+   "explain": "Las tarjetas de regalo y las criptomonedas son difíciles de recuperar.",
+   "patterns": [
+    "\\btarjetas? de regalo\\b",
+    "\\b(western union|bitcoin|criptomonedas?)\\b",
+    "\\b(pague|pagar|pago)\\b.{0,30}\\b(tarifa|cargo|comisi[o\\u00f3]n|gastos de env\\u00edo)\\b"
+   ],
+   "examples": [
+    "Pague una tarifa de envío"
+   ]
+  },
+  {
+   "id": "urgency.hi",
+   "category": "urgency",
+   "lang": "hi",
+   "weight": 10,
+   "title": "जल्दबाज़ी का दबाव",
+   "explain": "Scammers rush you.",
+   "patterns": [
+    "(\\u0924\\u0941\\u0930\\u0902\\u0924|\\u091c\\u0932\\u094d\\u0926\\u0940 \\u0915\\u0930\\u0947\\u0902|24 \\u0918\\u0902\\u091f\\u0947)"
+   ],
+   "examples": [
+    "तुरंत करें"
+   ]
+  },
+  {
+   "id": "threat.hi",
+   "category": "threat",
+   "lang": "hi",
+   "weight": 20,
+   "title": "खाता बंद होने की धमकी",
+   "explain": "Fear of losing access is a common tactic.",
+   "patterns": [
+    "(\\u0916\\u093e\\u0924\\u093e|\\u0905\\u0915\\u093e\\u0909\\u0902\\u091f).{0,20}(\\u092c\\u0902\\u0926|\\u092c\\u094d\\u0932\\u0949\\u0915|\\u0938\\u0938\\u094d\\u092a\\u0947\\u0902\\u0921|\\u0928\\u093f\\u0932\\u0902\\u092c\\u093f\\u0924)"
+   ],
+   "examples": [
+    "आपका खाता बंद हो जाएगा"
+   ]
+  },
+  {
+   "id": "prize.hi",
+   "category": "prize",
+   "lang": "hi",
+   "weight": 25,
+   "title": "अचानक इनाम या लॉटरी",
+   "explain": "You can't win what you didn't enter.",
+   "patterns": [
+    "(\\u0932\\u0949\\u091f\\u0930\\u0940|\\u0907\\u0928\\u093e\\u092e \\u091c\\u0940\\u0924)"
+   ],
+   "examples": [
+    "लॉटरी में आप जीते हैं"
+   ]
+  },
+  {
+   "id": "credentials.hi",
+   "category": "credentials",
+   "lang": "hi",
+   "weight": 30,
+   "title": "OTP/KYC मांगना",
+   "explain": "Banks never ask for OTP or PIN by message.",
+   "patterns": [
+    "(\\u0915\\u0947\\u0935\\u093e\\u0908\\u0938\\u0940|KYC).{0,30}(\\u0905\\u092a\\u0921\\u0947\\u091f|\\u0935\\u0947\\u0930\\u0940\\u092b\\u093e\\u0908|\\u0938\\u0924\\u094d\\u092f\\u093e\\u092a\\u093f\\u0924)",
+    "(\\u0913\\u091f\\u0940\\u092a\\u0940|OTP|\\u092a\\u093f\\u0928|\\u092a\\u093e\\u0938\\u0935\\u0930\\u094d\\u0921).{0,20}(\\u092c\\u0924\\u093e\\u090f\\u0902|\\u092d\\u0947\\u091c\\u0947\\u0902|\\u0936\\u0947\\u092f\\u0930 \\u0915\\u0930\\u0947\\u0902|\\u0926\\u0947\\u0902)"
+   ],
+   "examples": [
+    "अपना OTP भेजें"
+   ]
+  },
+  {
+   "id": "urgency.ta",
+   "category": "urgency",
+   "lang": "ta",
+   "weight": 10,
+   "title": "அவசரப் அழுத்தம்",
+   "explain": "Scammers rush you.",
+   "patterns": [
+    "(\\u0b89\\u0b9f\\u0ba9\\u0b9f\\u0bbf\\u0baf\\u0bbe\\u0b95|\\u0b89\\u0b9f\\u0ba9\\u0bc7|24 \\u0bae\\u0ba3\\u0bbf)"
+   ],
+   "examples": [
+    "உடனடியாக பதில் அளிக்கவும்"
+   ]
+  },
+  {
+   "id": "threat.ta",
+   "category": "threat",
+   "lang": "ta",
+   "weight": 20,
+   "title": "கணக்கு முடக்கம் என மிரட்டல்",
+   "explain": "Fear of losing access is a common tactic.",
+   "patterns": [
+    "(\\u0b95\\u0ba3\\u0b95\\u0bcd\\u0b95\\u0bc1).{0,30}(\\u0bae\\u0bc1\\u0b9f\\u0b95\\u0bcd\\u0b95|\\u0ba4\\u0b9f\\u0bc8|\\u0ba8\\u0bbf\\u0bb1\\u0bc1\\u0ba4\\u0bcd\\u0ba4|\\u0bae\\u0bc2\\u0b9f\\u0bcd\\u0baa)"
+   ],
+   "examples": [
+    "உங்கள் கணக்கு முடக்கப்படும்"
+   ]
+  },
+  {
+   "id": "prize.ta",
+   "category": "prize",
+   "lang": "ta",
+   "weight": 25,
+   "title": "பரிசு அல்லது லாட்டரி",
+   "explain": "You can't win what you didn't enter.",
+   "patterns": [
+    "(\\u0baa\\u0bb0\\u0bbf\\u0b9a\\u0bc1|\\u0bb2\\u0bbe\\u0b9f\\u0bcd\\u0b9f\\u0bb0\\u0bbf|\\u0bb5\\u0bc6\\u0bb1\\u0bcd\\u0bb1\\u0bbf \\u0baa\\u0bc6\\u0bb1\\u0bcd\\u0bb1\\u0bc0\\u0bb0\\u0bcd\\u0b95\\u0bb3\\u0bcd)"
+   ],
+   "examples": [
+    "உங்களுக்கு பரிசு கிடைத்துள்ளது"
+   ]
+  },
+  {
+   "id": "credentials.ta",
+   "category": "credentials",
+   "lang": "ta",
+   "weight": 30,
+   "title": "OTP/கடவுச்சொல் கேட்டல்",
+   "explain": "Banks never ask for OTP or passwords by message.",
+   "patterns": [
+    "(\\u0b95\\u0b9f\\u0bb5\\u0bc1\\u0b9a\\u0bcd\\u0b9a\\u0bca\\u0bb2\\u0bcd|\\u0b93\\u0b9f\\u0bbf\\u0baa\\u0bbf|OTP).{0,20}(\\u0baa\\u0b95\\u0bbf\\u0bb0|\\u0b85\\u0ba9\\u0bc1\\u0baa\\u0bcd\\u0baa|\\u0ba4\\u0bc6\\u0bb0\\u0bbf\\u0bb5\\u0bbf\\u0b95\\u0bcd\\u0b95)"
+   ],
+   "examples": [
+    "உங்கள் OTP ஐ அனுப்பவும்"
+   ]
+  },
+  {
+   "id": "urgency.si",
+   "category": "urgency",
+   "lang": "si",
+   "weight": 10,
+   "title": "ක්ෂණික බලපෑම",
+   "explain": "Scammers rush you.",
+   "patterns": [
+    "(\\u0daf\\u0dd0\\u0db1\\u0dca\\u0db8|\\u0d9a\\u0dca\\u0dc2\\u0dab\\u0dd2\\u0d9a\\u0dc0|\\u0dc0\\u0dc4\\u0dcf\\u0db8|\\u0db4\\u0dd0\\u0dba\\s*24)"
+   ],
+   "examples": [
+    "දැන්ම පිළිතුරු දෙන්න"
+   ]
+  },
+  {
+   "id": "threat.si",
+   "category": "threat",
+   "lang": "si",
+   "weight": 20,
+   "title": "ගිණුම වසා දැමීමේ බිය ගන්වීම",
+   "explain": "Fear of losing access is a common tactic.",
+   "patterns": [
+    "(\\u0d9c\\u0dd2\\u0dab\\u0dd4\\u0db8).{0,30}(\\u0d85\\u0dad\\u0dca\\u0dc4\\u0dd2\\u0da7\\u0dd4|\\u0d85\\u0dc0\\u0dc4\\u0dd2\\u0dbb|\\u0dc0\\u0dc3\\u0dcf)"
+   ],
+   "examples": [
+    "ඔබගේ ගිණුම අත්හිටුවනු ඇත"
+   ]
+  },
+  {
+   "id": "prize.si",
+   "category": "prize",
+   "lang": "si",
+   "weight": 25,
+   "title": "අනපේක්ෂිත ලොතරැයි හෝ තෑග්ග",
+   "explain": "You can't win what you didn't enter.",
+   "patterns": [
+    "(\\u0dbd\\u0ddc\\u0dad\\u0dbb\\u0dd0\\u0dba\\u0dd2|\\u0dad\\u0dd1\\u0d9c\\u0dca\\u0d9c|\\u0da2\\u0dba\\u0d9c\\u0dca\\u200d?\\u0dbb\\u0dc4\\u0dab)"
+   ],
+   "examples": [
+    "ඔබට ලොතරැයි ජයග්රහණයක් ලැබී ඇත"
+   ]
+  },
+  {
+   "id": "credentials.si",
+   "category": "credentials",
+   "lang": "si",
+   "weight": 30,
+   "title": "OTP/මුරපදය ඉල්ලීම",
+   "explain": "Banks never ask for OTP or passwords by message.",
+   "patterns": [
+    "(\\u0db8\\u0dd4\\u0dbb\\u0db4\\u0daf\\u0dba|OTP|\\u0d95\\u0da7\\u0dd3\\u0db4\\u0dd3).{0,25}(\\u0d91\\u0dc0\\u0db1\\u0dca\\u0db1|\\u0dbd\\u0db6\\u0dcf \\u0daf\\u0dd9\\u0db1\\u0dca\\u0db1|\\u0d9a\\u0dd2\\u0dba\\u0db1\\u0dca\\u0db1|\\u0db6\\u0dd9\\u0daf\\u0dcf)"
+   ],
+   "examples": [
+    "ඔබගේ OTP එවන්න"
+   ]
+  }
+ ]
+}

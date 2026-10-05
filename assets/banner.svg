@@ -1,0 +1,32 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="440" viewBox="0 0 1280 440" role="img" aria-labelledby="t d">
+<title id="t">ScamShield</title>
+<desc id="d">A suspicious bank message with its red flags highlighted in yellow and a Likely scam stamp.</desc>
+<defs>
+  <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#0b1530"/><stop offset="1" stop-color="#1b2f5c"/></linearGradient>
+  <filter id="sh" x="-20%" y="-20%" width="140%" height="150%"><feDropShadow dx="0" dy="14" stdDeviation="16" flood-color="#000" flood-opacity=".4"/></filter>
+</defs>
+<rect width="1280" height="440" fill="url(#bg)"/>
+<circle cx="1180" cy="40" r="260" fill="#ffffff" opacity=".035"/>
+<circle cx="640" cy="470" r="200" fill="#ffffff" opacity=".03"/>
+<g transform="translate(84 74)">
+  <path d="M34 0 0 14v22c0 21 14 36 34 42 20-6 34-21 34-42V14z" fill="#ffd84d"/>
+  <path d="M19 38l11 11 20-23" fill="none" stroke="#14213d" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+</g>
+<text x="176" y="140" font-family="Georgia, 'Iowan Old Style', 'Palatino Linotype', serif" font-size="86" font-weight="700" fill="#ffffff" letter-spacing="-2">ScamShield</text>
+<text x="84" y="214" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="27" fill="#c9d6ec">Paste a suspicious message.</text>
+<text x="84" y="252" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="27" fill="#c9d6ec">Get a verdict, the red flags,</text>
+<text x="84" y="290" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="27" fill="#c9d6ec">and what to do next.</text>
+<rect x="84" y="318" width="92" height="38" rx="19" fill="none" stroke="#6f84a8" stroke-width="1.5"/><text x="130" y="343" text-anchor="middle" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" font-weight="600" fill="#dbe5f4">Offline</text><rect x="189.8" y="318" width="92" height="38" rx="19" fill="none" stroke="#6f84a8" stroke-width="1.5"/><text x="236" y="343" text-anchor="middle" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" font-weight="600" fill="#dbe5f4">Private</text><rect x="295.6" y="318" width="139" height="38" rx="19" fill="none" stroke="#6f84a8" stroke-width="1.5"/><text x="365" y="343" text-anchor="middle" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" font-weight="600" fill="#dbe5f4">Multilingual</text><rect x="448.40000000000003" y="318" width="186" height="38" rx="19" fill="none" stroke="#6f84a8" stroke-width="1.5"/><text x="541" y="343" text-anchor="middle" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="16" font-weight="600" fill="#dbe5f4">Zero dependencies</text>
+<g filter="url(#sh)" transform="rotate(-2 980 220)">
+  <rect x="712" y="72" width="500" height="296" rx="6" fill="#ffffff"/>
+  <rect x="712" y="72" width="500" height="44" rx="6" fill="#e8edf5"/>
+  <rect x="712" y="104" width="500" height="12" fill="#e8edf5"/>
+  <text x="732" y="101" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="15" font-weight="600" fill="#52627a">Unknown sender, 9:41</text>
+  <rect x="739.0" y="167" width="69.6" height="28" rx="3" fill="#ffd84d"/><text x="742.0" y="188" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="17.6" fill="#14213d" textLength="63.6" lengthAdjust="spacingAndGlyphs" xml:space="preserve">URGENT</text><text x="805.6" y="188" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="17.6" fill="#14213d" textLength="74.2" lengthAdjust="spacingAndGlyphs" xml:space="preserve">: Your </text><rect x="876.8" y="167" width="271.0" height="28" rx="3" fill="#ffd84d"/><text x="879.8" y="188" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="17.6" fill="#14213d" textLength="265.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">account will be suspended</text><rect x="739.0" y="205" width="165.0" height="28" rx="3" fill="#ffd84d"/><text x="742.0" y="226" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="17.6" fill="#14213d" textLength="159.0" lengthAdjust="spacingAndGlyphs" xml:space="preserve">within 24 hours</text><text x="901.0" y="226" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="17.6" fill="#14213d" textLength="21.2" lengthAdjust="spacingAndGlyphs" xml:space="preserve">. </text><rect x="919.2" y="205" width="207.4" height="28" rx="3" fill="#ffd84d"/><text x="922.2" y="226" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="17.6" fill="#14213d" textLength="201.4" lengthAdjust="spacingAndGlyphs" xml:space="preserve">Verify your account</text><text x="742.0" y="264" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="17.6" fill="#14213d" textLength="74.2" lengthAdjust="spacingAndGlyphs" xml:space="preserve">now at </text><rect x="813.2" y="243" width="302.8" height="28" rx="3" fill="#ffd84d"/><text x="816.2" y="264" font-family="ui-monospace, 'SF Mono', Menlo, Consolas, 'Liberation Mono', monospace" font-size="17.6" fill="#14213d" textLength="296.8" lengthAdjust="spacingAndGlyphs" xml:space="preserve">http://secure-hsbc-login.xyz</text>
+  <g transform="rotate(-5 1090 325)">
+    <rect x="978" y="294" width="206" height="62" rx="8" fill="#ffffff" stroke="#b3122b" stroke-width="4"/>
+    <text x="1081" y="326" text-anchor="middle" font-family="Georgia, 'Iowan Old Style', 'Palatino Linotype', serif" font-size="29" font-weight="700" fill="#b3122b">Likely scam</text>
+    <text x="1081" y="345" text-anchor="middle" font-family="Inter, 'Segoe UI', Helvetica, Arial, sans-serif" font-size="14" font-weight="600" fill="#b3122b">risk score 100 / 100</text>
+  </g>
+</g>
+</svg>
