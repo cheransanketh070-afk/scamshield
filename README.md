@@ -4,7 +4,7 @@
 
 <br>
 
-[![CI](https://github.com/YOUR_USERNAME/scamshield/actions/workflows/ci.yml/badge.svg)](https://github.com/YOUR_USERNAME/scamshield/actions/workflows/ci.yml)
+[![CI](https://github.com/cheransanketh070-afk/scamshield/actions/workflows/ci.yml/badge.svg)](https://github.com/cheransanketh070afk/scamshield/actions/workflows/ci.yml)
 [![License: MIT](https://img.shields.io/badge/license-MIT-14213d.svg)](LICENSE)
 [![Python 3.9+](https://img.shields.io/badge/python-3.9%2B-14213d.svg)](https://www.python.org/)
 [![Dependencies: 0](https://img.shields.io/badge/dependencies-0-17695b.svg)](pyproject.toml)
@@ -50,7 +50,7 @@ And it does this **without sending the message anywhere**.
 Requires Python 3.9 or newer. There is nothing else to install.
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/scamshield.git
+git clone https://github.com/cheransanketh070-afk/scamshield.git
 cd scamshield
 pip install -e .
 ```
